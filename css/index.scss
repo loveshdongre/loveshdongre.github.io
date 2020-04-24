@@ -1,0 +1,414 @@
+$bg: #242529;
+$raiseBg: #272a2f;
+$raiseBorder: #2f3033;
+$raised2Bg: #24272c;
+$raised2Border: #24272e;
+$blue: #08fdd8;
+$iconColor: rgb(156, 156, 156);
+$red: #fc0b56;
+
+@font-face {
+    font-family: "girassol";
+    src: url("/webfonts/Girassol-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "dancing";
+    src: url("/webfonts/DancingScript-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "inria";
+    src: url("/webfonts/InriaSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "oswaldLight";
+    src: url("/webfonts/Oswald/static/Oswald-Light.ttf") format("truetype");
+}
+
+@mixin ulClean() {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+@mixin aClean() {
+    text-decoration: none;
+    color: white;
+}
+
+@mixin raised() {
+    border-radius: 1.5em;
+    background-color: $raiseBg;
+    border: 1px solid $raiseBorder;
+    box-shadow:
+        // -4px -4px 5px 0 rgba(0, 0, 0, 0.1),
+        // 12px 12px 12px 0 rgba(0, 0, 0, 0.2);
+        -2px -2px 5px 0 rgba(255, 255, 255, 0.5),
+        12px 12px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin raised2() {
+    border-radius: 1.5em;
+    background-color: $raised2Bg;
+    // border: 1px solid $raised2Border;
+    box-shadow:
+        -1px -1px 2px 0 rgba(255, 255, 255, 0.3),
+        1px 1px 12px 0 rgba(0, 0, 0, 1);
+}
+
+@mixin vAlign() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin headingFont() {
+    line-height: 70px;
+    font-family: "girassol";
+    font-size: 70px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+body {
+    background-color: $bg;
+    color: white;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: $blue;
+    text-align: center;
+    background-color: #000;
+    border-radius: .25rem;
+}
+
+.btn_decor {
+    font-family: 'oswaldLight';
+    letter-spacing: 3px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+    color: $blue;
+    border: 1px solid $blue;
+    padding: 10px;
+    line-height: 20px;
+    margin-top: 15px;
+
+    &:hover {
+        background-color: $blue;
+        color: $bg;
+    }
+}
+
+
+.sidenav {
+    font-family: "oswaldLight";
+    font-size: 14px;
+    @include vAlign();
+    @include raised2();
+    width: 70px;
+    height: 90%;
+    position: fixed;
+
+    .logo {
+        //@include raised2();
+        //border-radius: 1.5em;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 40px;
+        width: 40px;
+    }
+
+    .navUl {
+        @include ulClean();
+        @include vAlign();
+
+
+
+        li {
+
+            @include aClean();
+            @include raised2();
+
+            width: 40px;
+            height: 40px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            line-height: 35px;
+
+            .nav-link {
+                padding: 0;
+            }
+
+            i {
+                font-size: 16px;
+                margin-top: 11px;
+            }
+
+            i.active {
+                color: $blue;
+            }
+
+            &:hover {
+
+                i {
+                    color: $blue;
+                }
+            }
+
+
+
+            a {
+                color: $iconColor;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .social {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                i {
+                    color: $blue;
+                }
+            }
+        }
+
+        i {
+            font-size: 16px;
+            display: block;
+            color: $iconColor;
+            margin: 15px;
+        }
+
+    }
+}
+
+.mobileMenu {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    background-color: #121214;
+
+    .fa-bars {
+        margin: 12px;
+        // color: $iconColor;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .buttonArea {
+        height: 50px;
+        width: 100%;
+        right: -100%;
+        position: absolute;
+        background-color: #121214;
+
+        ul.navUl {
+            @include ulClean();
+            @include vAlign();
+            display: inline;
+            margin-bottom: 0;
+
+            li {
+                display: inline;
+
+                a {
+                    @include aClean();
+
+                }
+
+
+            }
+        }
+    }
+
+}
+
+.animMenu {
+    animation-name: menuAnim;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menuAnim {
+    from {
+        right: -100%;
+        opacity: 0;
+    }
+
+    to {
+        right: 0%;
+        opacity: 1;
+    }
+}
+
+.animMenuClose {
+    animation-name: menuAnimClose;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes menuAnimClose {
+    from {
+        right: 0%;
+        opacity: 1;
+    }
+
+    to {
+        right: -100%;
+        opacity: 0;
+    }
+}
+
+#home {
+
+    height: 100vh;
+
+    .contentDiv {
+        @include vAlign();
+    }
+}
+
+.wrapperDiv {
+    width: 100%;
+    user-select: none;
+    cursor: default;
+
+    .contentDiv {
+        // padding-top: 50px;
+        //@include vAlign();
+        @include headingFont();
+        margin-left: 5%;
+        margin-right: 5%;
+
+        .title {
+            .charFirst {
+                color: $red;
+                text-shadow: -2px 2px 0px $blue;
+            }
+
+            .char {
+                &:hover {
+                    color: $blue;
+                }
+            }
+        }
+
+        .textDiv {
+            font-size: 16px;
+            font-family: "oswaldLight";
+            letter-spacing: 3px;
+            color: #ffffff;
+            max-width: 700px;
+            line-height: 40px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bigLetter {
+            user-select: none;
+            z-index: -1;
+            position: absolute;
+            font-family: "girassol";
+            line-height: 0px;
+            font-size: 500px;
+            color: $red;
+            text-shadow: -5px 5px 0px $blue;
+            right: 20%;
+            top: 30%;
+            transform: rotate(-20deg);
+            animation: blink 3s ease-in-out infinite;
+        }
+    }
+
+}
+
+@keyframes blink {
+    0% {
+        text-shadow: -5px 5px 0px $blue;
+    }
+
+    50% {
+        text-shadow: -15px 15px 0px $blue;
+    }
+
+    100% {
+        text-shadow: -5px 5px 0px $blue;
+    }
+}
+
+.active {
+    color: $blue !important;
+}
+
+form {
+    input {
+        box-sizing: none;
+        width: 100%;
+        margin-top: 20px;
+
+        letter-spacing: 5px;
+        padding-left: 10px;
+    }
+
+    textarea {
+        margin-top: 20px;
+        box-sizing: none;
+        width: 100%;
+        letter-spacing: 5px;
+        padding-left: 10px;
+    }
+}
+
+.photo {
+
+    img {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media(max-width:990px) {
+    .wrapperDiv {
+        text-align: center;
+    }
+
+    .textDiv {
+        max-width: 100% !important;
+    }
+
+    #contact_btn {
+        margin: 0 auto;
+    }
+}

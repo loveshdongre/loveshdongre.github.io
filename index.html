@@ -6,9 +6,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lovesh Dongre</title>
+    <link rel="icon" href="media/logo st white.png" sizes="32x32" type="image/png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <script src="scripts/fontawesome.js" type="javascript"> </script>
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="scripts/index.js" type="text/javascript"> </script>
 </head>
 
-<body>
-    <h1>Lovesh Dongre</h1>
+<body data-spy="scroll" data-target=".myScrollspy" data-offset="500">
+
+    <div class="container-fluid">
+        <div class="row h-100">
+
+            <!-- sidenav  -->
+            <div class="d-none d-lg-block col-lg-1 h-100">
+                <nav class="sidenav mx-auto text-center">
+                    <div class="logo mx-auto mt-2">
+                        <img src="media/logo st white.png" style="border-radius:.7em;margin-top:10px" alt="logo">
+                    </div>
+
+                    <nav class="myScrollspy h-100">
+                        <ul class="navUl">
+                            <li class="nav-item" data-toggle="tooltip" title="HOME">
+                                <a class="nav-link" href="#home"><i class="fas fa-home"></i></a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" title="ABOUT">
+                                <a class="nav-link" href="#about"><i class="far fa-user"></i></a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" title="SKILLS">
+                                <a class="nav-link" href="#skills"><i class="far fa-star"></i></a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" title="MY WORK">
+                                <a class="nav-link" href="#my-work"><i class="fas fa-code"></i></a>
+                            </li>
+                            <li class="nav-item" data-toggle="tooltip" title="CONTACT">
+                                <a class="nav-link" href="#contact"><i class="far fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="social mb-2">
+                        <a data-toggle="tooltip" title="LINKEDIN" target="_blank"
+                            href="https://www.linkedin.com/in/loveshdongre/"><i class="fab fa-linkedin-in"></i></a>
+                        <a data-toggle="tooltip" title="GITHUB" target="_blank"
+                            href="https://github.com/loveshdongre"><i class="fab fa-github"></i></a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- main container -->
+            <div class="col-12 col-lg-11 p-0">
+
+                <!-- mobile menu -->
+                <div id="mobileMenuId" class="mobileMenu d-block d-lg-none">
+                    <div class="logo ml-3 mt-1 d-inline float-left">
+                        <img src="media/logo st white.png" style="border-radius:.7em;margin-top:10px" alt="logo">
+                    </div>
+
+                    <i class="sandwich fas fa-bars fa-2x"></i>
+
+                    <nav class="buttonArea myScrollspy">
+
+                        <ul class="navUl d-flex justify-content-around">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#home"><i class="fas fa-home"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about"><i class="fas fa-user"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#skills"><i class="fas fa-star"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#my-work"><i class="fas fa-code"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i></a>
+                            </li>
+
+
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <!-- home -->
+                <div id="home" class="wrapperDiv">
+                    <div class="contentDiv">
+                        Hi,<br>
+                        I'm <span class="title">
+                            <span class="charFirst">L</span><span class="char">o</span><span class="char">v</span><span
+                                class="char">e</span><span class="char">s</span><span class="char">h</span>
+                        </span>
+                        ,<br>
+                        web developer.
+                        <div class="textDiv">Web & Game Developer with an eye for Designing</div>
+
+                        <button id="contact_btn" class="btn_decor">
+                            CONTACT ME
+                        </button>
+
+                        <div class="bigLetter">
+                            L
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- about -->
+                <div id="about" class="wrapperDiv pb-5">
+
+                    <div class="contentDiv">
+                        <span class="title active">About</span>
+                        <div class="container-fluid p-0">
+                            <div class="row">
+                                <div class="col-12 col-lg-4 order-lg-2">
+                                    <div class="photo text-center mt-3 mb-3">
+                                        <img class="img-fluid img-thumbnail" src="media/myphoto.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-8 order-lg-1">
+
+                                    <div class="textDiv">I am a Computer Science & Engineering student pursuing B. Tech.
+                                        (Honors) in
+                                        University Institute of Technology, Rajiv Gandhi Proudyogiki Vishwavidhyalaya,
+                                        Bhopal.
+                                    </div>
+                                    <div class="textDiv">
+                                        Since schooldays I am fond of computers, where I learned HTML & Java and cut to
+                                        today I work on projects related to Web & Game Development. Apart from these
+                                        projects
+                                        working on Machine Learning is quite fascinating to me.
+                                    </div>
+                                    <div class="textDiv">In my spare time I like to solve riddles and puzzles like
+                                        rubik's cube. I
+                                        often enjoy myself doodling characters in Photoshop and making 3D models in
+                                        Autodesk Fusion
+                                        360.</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <!-- skills -->
+                <div id="skills" class="wrapperDiv pb-5">
+
+                    <div class="contentDiv">
+                        <span class="title active">Skills</span>
+                        <div class="textDiv">I am a Computer Science & Engineering student pursuing B. Tech. (Honors) in
+                            University Institute of Technology, Rajiv Gandhi Proudyogiki Vishwavidhyalaya, Bhopal.
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- contact -->
+                <div id="contact" class="wrapperDiv pb-5">
+
+                    <div class="contentDiv h-100 ">
+                        <span class="title active">Contact</span>
+
+                        <div class="textDiv">
+                            I'm interested in web and game developement opportunities. However, if you have other
+                            request or question, don't hesitate to contact me using below form either.
+                            <form action="https://formspree.io/xjveqlrq" method="POST">
+                                <div class="container-fluid p-0 pt-5 pb-5">
+                                    <div class="row">
+                                        <div class="w-100 col-12 col-md-4"><input placeholder="name" type="text"
+                                                name="name"></div>
+                                        <div class="col-12 col-md-8"><input type="text" placeholder="email"
+                                                name="email"></div>
+                                        <div class="col-12"><input type="text" placeholder="subject" name="subject">
+                                        </div>
+                                        <div class="col-12"><textarea name="message" placeholder="message"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn_decor ml-auto">Send</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- extra column for balancing space-->
+            <div class="d-none d-lg-block col-lg-1"></div>
+        </div>
+    </div>
+
+
+</body>
+
 
 </html>
