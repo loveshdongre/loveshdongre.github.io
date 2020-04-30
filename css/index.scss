@@ -1,7 +1,8 @@
 $bg: #242529;
 $raiseBg: #272a2f;
 $raiseBorder: #2f3033;
-$raised2Bg: #24272c;
+// $raised2Bg: #24272c;
+$raised2Bg: #222634;
 $raised2Border: #24272e;
 $blue: #08fdd8;
 $iconColor: rgb(156, 156, 156);
@@ -27,6 +28,26 @@ $red: #fc0b56;
     src: url("/webfonts/Oswald/static/Oswald-Light.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "azonix";
+    src: url("/webfonts/azonix-cufonfonts-webfont/Azonix.woff") format("truetype");
+}
+
+@font-face {
+    font-family: "futura";
+    src: url("/webfonts/futura/Futura\ Book\ font.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "futuraLight";
+    src: url("/webfonts/futura/futura\ light\ bt.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "azedo";
+    src: url("/webfonts/azedo/Azedo-Bold.otf") format("truetype");
+}
+
 @mixin ulClean() {
     list-style-type: none;
     padding-inline-start: 0px;
@@ -45,7 +66,7 @@ $red: #fc0b56;
         // -4px -4px 5px 0 rgba(0, 0, 0, 0.1),
         // 12px 12px 12px 0 rgba(0, 0, 0, 0.2);
         -2px -2px 5px 0 rgba(255, 255, 255, 0.5),
-        12px 12px 12px 0 rgba(0, 0, 0, 0.2);
+        12px 12px 12px 0 rgba(0, 0, 0, 1);
 }
 
 @mixin raised2() {
@@ -53,8 +74,17 @@ $red: #fc0b56;
     background-color: $raised2Bg;
     // border: 1px solid $raised2Border;
     box-shadow:
-        -1px -1px 2px 0 rgba(255, 255, 255, 0.3),
-        1px 1px 12px 0 rgba(0, 0, 0, 1);
+        -1px -1px 1px 0 rgba(255, 255, 255, 0.1),
+        1px 1px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+@mixin crater() {
+    border: 1px solid rgba(53, 53, 53, 0.2);
+    background-color: $raised2Bg;
+    // border: 1px solid $raised2Border;
+    box-shadow:
+        inset 1px 1px 12px 0 rgba(0, 0, 0, 0.3),
+        inset -1px -1px 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 @mixin vAlign() {
@@ -65,8 +95,9 @@ $red: #fc0b56;
 
 @mixin headingFont() {
     line-height: 70px;
-    font-family: "girassol";
-    font-size: 70px;
+    font-family: "futura";
+    font-weight: bold;
+    font-size: 50px;
 }
 
 html,
@@ -76,7 +107,9 @@ body {
 }
 
 body {
-    background-color: $bg;
+    // background-color: $bg;
+    background-image: linear-gradient(#101316, #242837);
+    background-attachment: fixed;
     color: white;
 }
 
@@ -92,23 +125,27 @@ body {
 }
 
 .btn_decor {
-    font-family: 'oswaldLight';
-    letter-spacing: 3px;
+
+    font-family: 'inria';
+    letter-spacing: 2px;
     display: block;
     background-color: rgba(0, 0, 0, 0);
-    font-size: 16px;
+    font-size: 12px;
     color: $blue;
-    border: 1px solid $blue;
+    // border: 1px solid $blue;
+    border: none;
     padding: 10px;
     line-height: 20px;
     margin-top: 15px;
+    @include raised2();
+    border: 1px solid rgba(0, 0, 0, 0);
 
     &:hover {
-        background-color: $blue;
-        color: $bg;
+        border: 1px solid $red;
     }
-}
 
+
+}
 
 .sidenav {
     font-family: "oswaldLight";
@@ -118,6 +155,11 @@ body {
     width: 70px;
     height: 90%;
     position: fixed;
+    left: -100%;
+    animation-fill-mode: forwards;
+    animation-name: 'sidenavAnim';
+    animation-duration: 1s;
+    animation-delay: 1s;
 
     .logo {
         //@include raised2();
@@ -125,38 +167,49 @@ body {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        height: 40px;
-        width: 40px;
+
+        img {
+            height: 30px;
+            margin-top: 10px;
+        }
     }
 
     .navUl {
         @include ulClean();
         @include vAlign();
 
-
-
         li {
 
             @include aClean();
-            @include raised2();
 
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin: 0 auto;
             margin-bottom: 15px;
-            line-height: 35px;
+            line-height: 40px;
 
             .nav-link {
                 padding: 0;
+
+                .name {
+                    font-family: "futuraLight";
+                    font-size: 12px;
+                    padding: 0;
+                    line-height: 10px;
+                    color: rgb(211, 211, 211);
+
+                }
             }
 
             i {
                 font-size: 16px;
-                margin-top: 11px;
+                margin-top: 0px;
+                margin-left: 2px;
             }
 
             i.active {
                 color: $blue;
+
             }
 
             &:hover {
@@ -202,6 +255,16 @@ body {
             margin: 15px;
         }
 
+    }
+}
+
+@keyframes sidenavAnim {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 1%;
     }
 }
 
@@ -297,6 +360,15 @@ body {
 
     .contentDiv {
         @include vAlign();
+
+    }
+
+    .textDiv {
+        opacity: 0;
+        animation-name: 'tagLine';
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
     }
 }
 
@@ -313,42 +385,84 @@ body {
         margin-right: 5%;
 
         .title {
-            .charFirst {
-                color: $red;
-                text-shadow: -2px 2px 0px $blue;
+
+            .fancy {
+                display: inline;
             }
 
-            .char {
+            span {
+                opacity: 0;
+                transition: all 50ms ease;
+            }
+
+            .fade {
+                opacity: 1;
+                transform: translateY(0px);
+
                 &:hover {
                     color: $blue;
                 }
             }
+
+            .bounce {
+                animation-name: 'bounceAnim';
+                animation-duration: 50ms;
+                animation-timing-function: linear;
+            }
+
+            @keyframes bounceAnim {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                100% {
+                    transform: translateY(-10px);
+                }
+            }
+
         }
 
         .textDiv {
-            font-size: 16px;
-            font-family: "oswaldLight";
+            font-size: 14px;
+            font-family: "futuraLight";
             letter-spacing: 3px;
             color: #ffffff;
             max-width: 700px;
-            line-height: 40px;
+            line-height: 30px;
             margin-top: 10px;
             margin-bottom: 10px;
         }
+
+        #contact_btn {
+            opacity: 0;
+            animation-name: 'tagLine';
+            animation-duration: 1s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes tagLine {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
 
         .bigLetter {
             user-select: none;
             z-index: -1;
             position: absolute;
-            font-family: "girassol";
-            line-height: 0px;
-            font-size: 500px;
-            color: $red;
-            text-shadow: -5px 5px 0px $blue;
             right: 20%;
-            top: 30%;
+            top: -100%;
             transform: rotate(-20deg);
-            animation: blink 3s ease-in-out infinite;
+
+            img {
+                height: 400px;
+            }
         }
     }
 
@@ -370,24 +484,34 @@ body {
 
 .active {
     color: $blue !important;
+    // @include crater();
 }
 
 form {
+
     input {
         box-sizing: none;
         width: 100%;
         margin-top: 20px;
-
-        letter-spacing: 5px;
+        background-color: #242837;
+        letter-spacing: 1px;
         padding-left: 10px;
+        border: 1px solid rgba(0, 0, 0, 0);
+        color: white;
+        @include crater();
+
     }
 
     textarea {
+        color: white;
+        border: 1px solid rgba(0, 0, 0, 0);
+        background-color: #242837;
         margin-top: 20px;
         box-sizing: none;
         width: 100%;
-        letter-spacing: 5px;
+        letter-spacing: 1px;
         padding-left: 10px;
+        @include crater();
     }
 }
 
@@ -411,4 +535,51 @@ form {
     #contact_btn {
         margin: 0 auto;
     }
+
+    .bigLetter {
+
+        img {
+            height: 350px !important;
+
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .bigLetter {
+
+
+        img {
+            height: 300px !important;
+
+        }
+
+    }
+
+}
+
+.blue {
+    color: $blue;
+}
+
+//scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 20px 20px 20px #242837;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $blue;
 }

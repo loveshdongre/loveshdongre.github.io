@@ -22,6 +22,35 @@ $(document).ready(function () {
         $('html,body').animate({ scrollTop: $('#contact').offset().top - 100 }, 'swing')
     })
 
+    //text animation
+
+    const text = document.querySelector('.fancy');
+    const strText = text.textContent;
+    const splitText = strText.split('');
+    text.textContent = '';
+
+    for (let i = 0; i < splitText.length; i++) {
+        text.innerHTML += '<span>' + splitText[i] + '</span>'
+    }
+    let char = 0;
+    let timer = setInterval(onTick, 50);
+
+    function onTick() {
+        const span = text.querySelectorAll('span')[char];
+        span.classList.add('fade');
+        char++
+
+        if (char === splitText.length) {
+            complete();
+            return;
+        }
+    }
+
+    function complete() {
+        clearInterval(timer);
+        timer = null;
+    }
+
     // autoscroll animation
     $('a[href*="#"]:not([href="#"])').click(function () {
         var target = $(this.hash);
@@ -32,10 +61,23 @@ $(document).ready(function () {
     if (location.hash) {
         var id = $(location.hash);
     }
-    $(window).load(function () {
+    $(window).on('load', function () {
         if (location.hash) {
             $('html,body').animate({ scrollTop: id.offset().top - 100 }, 'swing')
         };
     });
+
+    //reload svg
+    function loadingFunction() {
+        var url = "media/L.svg?r=" + Math.random();
+        $(".bigLetter>img").attr("src", url);
+    }
+
+    loadingFunction();
+
+    //bounce
+    $('.fade').on('hover', function () {
+        $(this).toggleClass('bounce');
+    })
 
 });
