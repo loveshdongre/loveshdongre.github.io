@@ -6,7 +6,7 @@ $raised2Bg: #222634;
 $raised2Border: #24272e;
 $blue: #08fdd8;
 $iconColor: rgb(156, 156, 156);
-$red: #fc0b56;
+$red: #fc0b57;
 
 @font-face {
     font-family: "girassol";
@@ -102,8 +102,8 @@ $red: #fc0b56;
 
 html,
 body {
-    height: 100%;
     margin: 0px;
+    overflow-x: hidden;
 }
 
 body {
@@ -111,6 +111,7 @@ body {
     background-image: linear-gradient(#101316, #242837);
     background-attachment: fixed;
     color: white;
+
 }
 
 .tooltip-inner {
@@ -271,10 +272,16 @@ body {
 .mobileMenu {
     z-index: 2;
     position: fixed;
-    top: 0;
+    transition: top 1s;
+    top: -100%;
     width: 100%;
     text-align: right;
+
     background-color: #121214;
+    animation: 'menuEntry';
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 
     .fa-bars {
         margin: 12px;
@@ -312,6 +319,16 @@ body {
         }
     }
 
+}
+
+@keyframes menuEntry {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0%;
+    }
 }
 
 .animMenu {
@@ -518,9 +535,70 @@ form {
 .photo {
 
     img {
-        height: 300px;
-        width: 300px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-height: 300px;
+        border-radius: 50%;
     }
+}
+
+
+#resume {
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .tile {
+        display: flex;
+        flex-direction: column;
+        @include crater();
+        line-height: 30px;
+        width: 100%;
+        padding: 20px;
+        padding-left: 40px;
+        border-left: 1px solid $blue;
+
+        &::before {
+            content: '';
+            position: absolute;
+            padding-left: 10px;
+            left: 15px;
+            border-left: 15px solid $blue;
+            border-right: 15px solid transparent;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+
+        }
+
+        .tileName {
+            font-size: 1.5rem;
+
+            .dur {
+                display: inline;
+                color: rgb(167, 167, 167);
+            }
+        }
+
+        .tileSub {
+            font-size: 1rem;
+            color: rgb(167, 167, 167);
+        }
+
+        .tileContent {
+            font-size: 1rem;
+            color: rgb(167, 167, 167);
+        }
+    }
+
+    .type {
+        margin-top: 20px;
+        color: $red;
+        font-size: 2rem;
+    }
+
 }
 
 @media(max-width:990px) {
@@ -529,11 +607,15 @@ form {
     }
 
     .textDiv {
-        max-width: 100% !important;
+        max-width: 100%;
     }
 
     #contact_btn {
         margin: 0 auto;
+    }
+
+    .tile {
+        width: 100% !important;
     }
 
     .bigLetter {
@@ -582,4 +664,39 @@ form {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: $blue;
+}
+
+
+//sandwich 
+.sandwich {
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    &:after,
+    &:before,
+    div {
+        background-color: #fff;
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 3px;
+        margin: 7px 0;
+        transition: all .2s ease-in-out;
+    }
+
+}
+
+.open {
+    &:before {
+        transform: translateY(10px) rotate(135deg);
+    }
+
+    &:after {
+        transform: translateY(-10px) rotate(-135deg);
+    }
+
+    div {
+        transform: scale(0);
+    }
 }

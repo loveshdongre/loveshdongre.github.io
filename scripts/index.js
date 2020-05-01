@@ -1,4 +1,46 @@
+//validation
+function validateForm() {
+    let name = $('#name').val();
+    let subject = $('#subject').val();
+    let message = $('#message').val();
+
+    let error = '';
+    var nameReg = new RegExp('[a-zA-Z0-9]');
+
+    if (!nameReg.trim().test(name)) {
+        error = "Name should contain only alphabets and numbers";
+    }
+    else if (!nameReg.trim().test(subject)) {
+        error = 'Subject should contain only alphabets and numbers';
+    }
+    else if (message.trim().length == 0) {
+        error = 'Message cannot be empty'
+    }
+
+    if (error !== '') {
+        alert(error);
+        return false;
+    }
+
+    return true;
+}
+
 $(document).ready(function () {
+
+    //navhide on scroll
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollpos = window.pageYOffset;
+        if (prevScrollpos > currentScrollpos) {
+            $('.mobileMenu').css('top', '0');
+        }
+        else {
+            $('.mobileMenu').css('animation', 'unset')
+            $('.mobileMenu').css('top', '-100%');
+        }
+        prevScrollpos = currentScrollpos;
+    }
+
     //tooltip
     $('[data-toggle="tooltip"]').tooltip()
 
@@ -75,9 +117,12 @@ $(document).ready(function () {
 
     loadingFunction();
 
-    //bounce
-    $('.fade').on('hover', function () {
-        $(this).toggleClass('bounce');
+    //sandwich icon
+    $('.sandwich').on('click', function () {
+        $(this).toggleClass('open')
     })
+
+
+
 
 });
