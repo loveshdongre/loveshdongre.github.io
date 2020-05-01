@@ -94,8 +94,9 @@ $(document).ready(function () {
     }
 
     // autoscroll animation
-    $('a[href*="#"]:not([href="#"])').click(function () {
-        var target = $(this.hash);
+    $('.smoothScroll').click(function (e) {
+        e.preventDefault();
+        var target = $($(this).attr('data-href'));
         $('html,body').stop().animate({
             scrollTop: target.offset().top - 110
         }, 'linear');
@@ -123,6 +124,27 @@ $(document).ready(function () {
     })
 
 
+    //skillbar
+    function skillBar() {
+        obj = $('#resume').find('.skillBar');
+        $.each(obj, function (key, value) {
 
+            percentObj = $(value).find('.skillPercent');
+            percentObj.addClass('fadeInPercent');
+            percent = percentObj.text()
+
+            $(value).css('width', percent)
+        })
+
+    }
+    $(window).scroll(function () {
+        var hT = $('#skills').offset().top - 150,
+            hH = $('#skills').outerHeight(),
+            wH = $(window).height(),
+            wS = $(this).scrollTop();
+        if (wS > (hT + hH - wH)) {
+            skillBar();
+        }
+    });
 
 });

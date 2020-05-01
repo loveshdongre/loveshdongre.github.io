@@ -9,28 +9,8 @@ $iconColor: rgb(156, 156, 156);
 $red: #fc0b57;
 
 @font-face {
-    font-family: "girassol";
-    src: url("/webfonts/Girassol-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "dancing";
-    src: url("/webfonts/DancingScript-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
     font-family: "inria";
     src: url("/webfonts/InriaSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "oswaldLight";
-    src: url("/webfonts/Oswald/static/Oswald-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "azonix";
-    src: url("/webfonts/azonix-cufonfonts-webfont/Azonix.woff") format("truetype");
 }
 
 @font-face {
@@ -43,10 +23,6 @@ $red: #fc0b57;
     src: url("/webfonts/futura/futura\ light\ bt.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "azedo";
-    src: url("/webfonts/azedo/Azedo-Bold.otf") format("truetype");
-}
 
 @mixin ulClean() {
     list-style-type: none;
@@ -117,7 +93,7 @@ body {
 .tooltip-inner {
     max-width: 200px;
     padding: 3px 8px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
     color: $blue;
     text-align: center;
@@ -145,11 +121,15 @@ body {
         border: 1px solid $red;
     }
 
+    &:focus {
+        outline: none;
+    }
+
 
 }
 
 .sidenav {
-    font-family: "oswaldLight";
+    font-family: "futuraLight";
     font-size: 14px;
     @include vAlign();
     @include raised2();
@@ -304,7 +284,6 @@ body {
             @include ulClean();
             @include vAlign();
             display: inline;
-            margin-bottom: 0;
 
             li {
                 display: inline;
@@ -501,6 +480,8 @@ body {
 
 .active {
     color: $blue !important;
+    text-shadow: 0 0 30px #3b5998;
+    transition: all 0.5s ease;
     // @include crater();
 }
 
@@ -698,5 +679,80 @@ form {
 
     div {
         transform: scale(0);
+    }
+}
+
+.email {
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+
+    &:hover {
+        color: $red;
+    }
+}
+
+.achiList {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+
+
+    i {
+        font-size: 1rem;
+    }
+
+    .achiTitle {
+        padding: 0;
+        margin: 0;
+        font-size: 1rem;
+        height: 50px;
+    }
+}
+
+.skillTile {
+
+    .fadeInPercent {
+        animation-name: fadeIn;
+        animation-duration: 500ms;
+        animation-delay: 500ms;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .skillName {
+        font-size: 1rem;
+    }
+
+    .skillArea {
+        width: 100%;
+        height: 10px;
+        background-color: grey;
+
+
+
+        .skillBar {
+            width: 0%;
+            height: 10px;
+            background-color: $blue;
+            text-align: right;
+            transition: all 1s ease;
+
+            .skillPercent {
+                font-size: 1rem;
+                position: relative;
+                top: - 50px;
+                opacity: 0;
+
+            }
+        }
     }
 }

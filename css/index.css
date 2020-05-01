@@ -1,26 +1,6 @@
 @font-face {
-  font-family: "girassol";
-  src: url("/webfonts/Girassol-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "dancing";
-  src: url("/webfonts/DancingScript-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "inria";
   src: url("/webfonts/InriaSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "oswaldLight";
-  src: url("/webfonts/Oswald/static/Oswald-Light.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "azonix";
-  src: url("/webfonts/azonix-cufonfonts-webfont/Azonix.woff") format("truetype");
 }
 
 @font-face {
@@ -31,11 +11,6 @@
 @font-face {
   font-family: "futuraLight";
   src: url("/webfonts/futura/futura light bt.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "azedo";
-  src: url("/webfonts/azedo/Azedo-Bold.otf") format("truetype");
 }
 
 html,
@@ -54,7 +29,7 @@ body {
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #08fdd8;
   text-align: center;
@@ -84,8 +59,12 @@ body {
   border: 1px solid #fc0b57;
 }
 
+.btn_decor:focus {
+  outline: none;
+}
+
 .sidenav {
-  font-family: "oswaldLight";
+  font-family: "futuraLight";
   font-size: 14px;
   position: relative;
   top: 50%;
@@ -261,7 +240,6 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline;
-  margin-bottom: 0;
 }
 
 .mobileMenu .buttonArea ul.navUl li {
@@ -537,6 +515,9 @@ body {
 
 .active {
   color: #08fdd8 !important;
+  text-shadow: 0 0 30px #3b5998;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 form input {
@@ -727,5 +708,86 @@ form textarea {
 .open div {
   -webkit-transform: scale(0);
           transform: scale(0);
+}
+
+.email {
+  text-decoration: none;
+  color: #a3a3a3;
+}
+
+.email:hover {
+  color: #fc0b57;
+}
+
+.achiList {
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.achiList i {
+  font-size: 1rem;
+}
+
+.achiList .achiTitle {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  height: 50px;
+}
+
+.skillTile .fadeInPercent {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.skillTile .skillName {
+  font-size: 1rem;
+}
+
+.skillTile .skillArea {
+  width: 100%;
+  height: 10px;
+  background-color: grey;
+}
+
+.skillTile .skillArea .skillBar {
+  width: 0%;
+  height: 10px;
+  background-color: #08fdd8;
+  text-align: right;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.skillTile .skillArea .skillBar .skillPercent {
+  font-size: 1rem;
+  position: relative;
+  top: -50px;
+  opacity: 0;
 }
 /*# sourceMappingURL=index.css.map */

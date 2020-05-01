@@ -48,27 +48,32 @@
                     <nav class="myScrollspy h-100">
                         <ul class="navUl">
                             <li class="nav-item">
-                                <a class="nav-link" href="#home"><i class="fas fa-home"></i>
+                                <a class="nav-link smoothScroll" data-href="#home" href="#home"><i
+                                        class="fas fa-home"></i>
                                     <div class="name">Home</div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about"><i class="far fa-user"></i>
+                                <a class="nav-link smoothScroll" data-href="#about" href="#about"><i
+                                        class="far fa-user"></i>
                                     <div class="name">About</div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#resume"><i class="far fa-star"></i>
+                                <a class="nav-link smoothScroll" data-href="#resume" href="#resume"><i
+                                        class="far fa-star"></i>
                                     <div class="name">Resume</div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#projects"><i class="fas fa-code"></i>
+                                <a class="nav-link smoothScroll" data-href="#projects" href="#projects"><i
+                                        class="fas fa-code"></i>
                                     <div class="name">Projects</div>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact"><i class="far fa-envelope"></i>
+                                <a class="nav-link smoothScroll" data-href="#contact" href="#contact"><i
+                                        class="far fa-envelope"></i>
                                     <div class="name">Contact</div>
                                 </a>
                             </li>
@@ -110,19 +115,24 @@
 
                         <ul class="navUl d-flex justify-content-around">
                             <li class="nav-item">
-                                <a class="nav-link" href="#home"><i class="fas fa-home"></i></a>
+                                <a class="nav-link smoothScroll" data-href="#home" href="#home"><i
+                                        class="fas fa-home"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about"><i class="fas fa-user"></i></a>
+                                <a class="nav-link smoothScroll" data-href="#about" href="#about"><i
+                                        class="fas fa-user"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#resume"><i class="fas fa-star"></i></a>
+                                <a class="nav-link smoothScroll" data-href="#resume" href="#resume"><i
+                                        class="fas fa-star"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#portfolio"><i class="fas fa-code"></i></a>
+                                <a class="nav-link smoothScroll" data-href="#portfolio" href="#portfolio"><i
+                                        class="fas fa-code"></i></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i></a>
+                                <a class="nav-link smoothScroll" data-href="#contact" href="#contact"><i
+                                        class="fas fa-envelope"></i></a>
                             </li>
 
 
@@ -153,7 +163,7 @@
                 </div>
 
                 <!-- about -->
-                <div id="about" class="wrapperDiv">
+                <div id="about" class="wrapperDiv pb-5">
 
                     <div class="contentDiv">
                         <span class="title blue">About</span>
@@ -197,7 +207,7 @@
                 <div id="resume" class="wrapperDiv pb-5">
 
                     <div class="contentDiv">
-                        <span class="title active">Resume</span>
+                        <span class="title blue">Resume</span>
                         <div class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="type">Education</div>
@@ -255,30 +265,91 @@
                             </div>
                         </div>
 
-                        <div class="row">
+                        <div class="row" id="skills">
                             <div class="col-12">
                                 <div class="type">Skills</div>
                             </div>
                             <div class="col-12 col-lg-6">
-
                                 <div class="skillTile">
-                                    <div class="skillName"></div>
+                                    <div class="skillName">Web Development</div>
                                     <div class="skillArea">
-                                        <div class="skilBar">
-                                            <div class="skillPercent"></div>
+                                        <div class="skillBar">
+                                            <div class="skillPercent">80%</div>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-12 col-lg-6">
-
+                                <div class="skillTile">
+                                    <div class="skillName">Web Development</div>
+                                    <div class="skillArea">
+                                        <div class="skillBar">
+                                            <div class="skillPercent">70%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="skillTile">
+                                    <div class="skillName">Web Development</div>
+                                    <div class="skillArea">
+                                        <div class="skillBar">
+                                            <div class="skillPercent">90%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="skillTile">
+                                    <div class="skillName">Web Development</div>
+                                    <div class="skillArea">
+                                        <div class="skillBar">
+                                            <div class="skillPercent">100%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="skillTile">
+                                    <div class="skillName">Web Development</div>
+                                    <div class="skillArea">
+                                        <div class="skillBar">
+                                            <div class="skillPercent">50%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="skillTile">
+                                    <div class="skillName">Web Development</div>
+                                    <div class="skillArea">
+                                        <div class="skillBar">
+                                            <div class="skillPercent">75%</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-12">
                                 <div class="type">Achievements</div>
+
+                                <div class="achiList">
+
+                                    <div class="achiTitle"> <i class="fas fa-trophy"></i> <span data-toggle="tooltip"
+                                            title="Award received for scoring highest in a subject">Marker Cup</span>
+                                        for Informatics
+                                        Practices (2016)</div>
+                                </div>
+
+                                <div class="achiList">
+
+                                    <div class="achiTitle"><i class="fas fa-award"></i> 1<sup>st</sup> Runner Up in
+                                        <span data-toggle="tooltip" title="Annual Coding Event held in UIT RGPV">
+                                            CodeAdept 2.0 (2018)</span></div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -286,16 +357,18 @@
                 </div>
 
                 <!-- contact -->
-                <div id="contact" class="wrapperDiv pt-5 pb-5">
+                <div id="contact" class="wrapperDiv pb-5">
 
                     <div class="contentDiv">
                         <span class="title blue">Contact</span>
 
                         <div class="textDiv">
                             If you have other request or question, don't hesitate to contact me using below form either.
+                            <br>
+                            <a class="email" href="mailto:loveshdongre57@gmail.com">loveshdongre57@gmail.com</a>
                             <form id="contactForm" action="https://formspree.io/xjveqlrq" method="POST"
                                 onsubmit="return validateForm()">
-                                <div class="container-fluid p-0 pt-5">
+                                <div class="container-fluid p-0 pt-3">
                                     <div class="row">
                                         <div class="w-100 col-12 col-md-4"><input id="name" placeholder="Name"
                                                 type="text" name="name"></div>
