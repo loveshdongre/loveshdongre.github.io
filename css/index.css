@@ -627,30 +627,6 @@ form textarea {
   font-size: 2rem;
 }
 
-@media (max-width: 990px) {
-  .wrapperDiv {
-    text-align: center;
-  }
-  .textDiv {
-    max-width: 100%;
-  }
-  #contact_btn {
-    margin: 0 auto;
-  }
-  .tile {
-    width: 100% !important;
-  }
-  .bigLetter img {
-    height: 350px !important;
-  }
-}
-
-@media (max-width: 500px) {
-  .bigLetter img {
-    height: 300px !important;
-  }
-}
-
 .blue {
   color: #08fdd8;
 }
@@ -767,6 +743,7 @@ form textarea {
 
 .skillTile .skillName {
   font-size: 1rem;
+  text-align: left;
 }
 
 .skillTile .skillArea {
@@ -789,5 +766,57 @@ form textarea {
   position: relative;
   top: -50px;
   opacity: 0;
+}
+
+.skillTile .skillDropdown {
+  font-size: 1rem;
+  text-align: right;
+  height: auto;
+}
+
+.skillTile .skillDropdown i {
+  height: 5px;
+  cursor: pointer;
+}
+
+.skillTile .skillDropdown i:hover {
+  color: #fc0b57;
+}
+
+.skillTile .skillDropdown .dropContent {
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.skillTile .skillDropdown .dropContent div {
+  height: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 990px) {
+  .wrapperDiv {
+    text-align: center;
+  }
+  .textDiv {
+    max-width: 100%;
+  }
+  #contact_btn {
+    margin: 0 auto;
+  }
+  .tile {
+    width: 100% !important;
+  }
+  .bigLetter img {
+    height: 350px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .bigLetter img {
+    height: 300px !important;
+  }
 }
 /*# sourceMappingURL=index.css.map */

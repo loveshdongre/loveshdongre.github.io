@@ -138,7 +138,7 @@ $(document).ready(function () {
 
     }
     $(window).scroll(function () {
-        var hT = $('#skills').offset().top - 150,
+        var hT = $('#skills').offset().top,
             hH = $('#skills').outerHeight(),
             wH = $(window).height(),
             wS = $(this).scrollTop();
@@ -146,5 +146,21 @@ $(document).ready(function () {
             skillBar();
         }
     });
+
+    //hide dropdown
+    $('.dropContent').hide(0)
+    $('.skillDropdown>i').on('click', function () {
+
+        $(this).toggleClass("fa-chevron-down fa-chevron-up");
+
+
+        if ($(this).hasClass('fa-chevron-up')) {
+            $(this).siblings('.dropContent').hide(200);
+        }
+        else {
+            $(this).siblings('.dropContent').show(200);
+        }
+
+    })
 
 });
