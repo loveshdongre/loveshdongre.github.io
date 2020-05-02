@@ -138,7 +138,7 @@ $(document).ready(function () {
 
     }
     $(window).scroll(function () {
-        var hT = $('#skills').offset().top,
+        var hT = $('#skills').offset().top - 300,
             hH = $('#skills').outerHeight(),
             wH = $(window).height(),
             wS = $(this).scrollTop();
