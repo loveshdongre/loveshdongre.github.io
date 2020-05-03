@@ -375,7 +375,7 @@ body {
   line-height: 70px;
   font-family: "futura";
   font-weight: bold;
-  font-size: 50px;
+  font-size: 3rem;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -399,12 +399,13 @@ body {
 
 #home .contentDiv .title .fade {
   opacity: 1;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
+  -webkit-transition: all 50ms ease;
+  transition: all 50ms ease;
 }
 
 #home .contentDiv .title .fade:hover {
   color: #08fdd8;
+  font-size: 3.2rem;
 }
 
 #home .contentDiv .title .bounce {
@@ -507,9 +508,10 @@ body {
   line-height: 70px;
   font-family: "futura";
   font-weight: bold;
-  font-size: 50px;
+  font-size: 3rem;
   margin-left: 5%;
   margin-right: 5%;
+  text-align: left;
 }
 
 .wrapperDiv .contentDiv .title .fancy {
@@ -746,6 +748,8 @@ form textarea {
 
 .achiList i {
   font-size: 1rem;
+  width: 25px;
+  text-align: center;
 }
 
 .achiList .achiTitle {
@@ -753,6 +757,19 @@ form textarea {
   margin: 0;
   font-size: 1rem;
   height: 50px;
+}
+
+.skillControls {
+  font-size: 1.5rem;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.skillControls i:hover {
+  color: #fc0b57;
+  cursor: pointer;
 }
 
 .skillTile .fadeInPercent {
@@ -787,6 +804,7 @@ form textarea {
 .skillTile .skillName {
   font-size: 1rem;
   text-align: left;
+  opacity: 0;
 }
 
 .skillTile .skillArea {
@@ -854,6 +872,9 @@ form textarea {
   }
   .bigLetter img {
     height: 350px !important;
+  }
+  #about .contentDiv {
+    text-align: center;
   }
 }
 

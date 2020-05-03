@@ -81,10 +81,10 @@
                     </nav>
 
                     <div class="social mb-2">
-                        <a data-toggle="tooltip" title="LINKEDIN" target="_blank"
-                            href="https://www.linkedin.com/in/loveshdongre/"><i class="fab fa-linkedin-in"></i></a>
-                        <a data-toggle="tooltip" title="GITHUB" target="_blank"
-                            href="https://github.com/loveshdongre"><i class="fab fa-github"></i></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/loveshdongre/"><i data-toggle="tooltip"
+                                title="LinkedIn" class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" href="https://github.com/loveshdongre"><i data-toggle="tooltip"
+                                title="Github" class="fab fa-github"></i></a>
                     </div>
                 </nav>
             </div>
@@ -144,16 +144,16 @@
                 <!-- home -->
                 <div id="home" class="wrapperDiv">
                     <div class="contentDiv">
-                        <div class="container-fludi">
+                        <div class=" container-fluid">
                             <div class="row">
 
-                                <div class="col-lg-6 order-lg-2">
+                                <div class="col-lg-4 order-lg-2 text-center">
                                     <div class=" bigLetter">
                                         <img src="media/L.svg" alt="">
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 order-lg-1">
+                                <div class="col-lg-8 order-lg-1">
                                     <div class="intro">
                                         <span class="title">
                                             <div class="fancy">Hi, I'm Lovesh.</div>
@@ -185,12 +185,12 @@
                         <div class="container-fluid p-0">
                             <div class="row">
 
-                                <div class="col-12 col-lg-4 order-lg-2 d-none d-lg-block">
+                                <div class="col-12 col-lg-5 order-lg-2 d-none d-lg-block">
                                     <div class="photo text-center">
                                         <img class="img-fluid" src="media/my bnw2.png" alt="">
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-8 order-lg-1">
+                                <div class="col-12 col-lg-7 order-lg-1">
 
                                     <div class="textDiv">I'm Lovesh Dongre, a Computer Science & Engineering student
                                         pursuing B. Tech.
@@ -222,7 +222,10 @@
                 <div id="resume" class="wrapperDiv pb-5">
 
                     <div class="contentDiv">
-                        <span class="title blue">Resume</span>
+                        <span class="title blue d-inline">Resume</span>
+                        <button id="downloadCV" class="btn_decor float-right">
+                            Download CV
+                        </button>
                         <div class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="type">Education</div>
@@ -280,9 +283,13 @@
                             </div>
                         </div>
 
-                        <div class="row" id="skills">
+                        <div class="row pt-5" id="skills">
                             <div class="col-12">
-                                <div class="type">Skills</div>
+                                <div class="type d-inline">Skills</div>
+                                <div class="d-inline float-right skillControls">
+                                    <i class="fas fa-angle-double-up skillToggle" data-toggle="tooltip"
+                                        title="show / hide all"></i>
+                                </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="skillTile">
@@ -413,15 +420,14 @@
 
                                 <div class="achiList">
                                     <div class="achiTitle">
-                                        <i class="fas fa-award"></i> 1<sup>st</sup> Runner Up in
-                                        <span data-toggle="tooltip" title="Annual Coding Event held in UIT RGPV">
+                                        <i class="fas fa-award"></i>
+                                        <span data-toggle="tooltip"
+                                            title="Annual Coding Event held in UIT RGPV">1<sup>st</sup> Runner Up in
                                             CodeAdept 2.0 (2018)</span></div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- projects -->
@@ -440,10 +446,11 @@
                 <!-- contact -->
                 <div id="contact" class="wrapperDiv pb-5">
 
+
                     <div class="contentDiv">
                         <span class="title blue">Contact</span>
 
-                        <div class="textDiv">
+                        <div class="textDiv" style="max-width: 700px;">
                             If you have other request or question, don't hesitate to contact me using below form either.
                             <br>
                             <a class="email" href="mailto:loveshdongre57@gmail.com">loveshdongre57@gmail.com</a>

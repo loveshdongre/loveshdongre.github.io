@@ -63,6 +63,17 @@ $(document).ready(function () {
     $('#contact_btn').click(() => {
         $('html,body').animate({ scrollTop: $('#contact').offset().top - 100 }, 'swing')
     })
+    // on clicking downloadcv btn
+    $('#downloadCV').click(() => {
+        // window.open('/media/Lovesh Resume -19April2020.pdf');
+        const file_path = '/media/Lovesh Resume -19April2020.pdf';
+        const a = document.createElement('A');
+        a.href = file_path;
+        a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    })
 
     //text animation
 
@@ -127,6 +138,8 @@ $(document).ready(function () {
     //skillbar
     function skillBar() {
         obj = $('#resume').find('.skillBar');
+
+        $('.skillName').addClass('fadeInPercent');
         $.each(obj, function (key, value) {
 
             percentObj = $(value).find('.skillPercent');
@@ -153,12 +166,29 @@ $(document).ready(function () {
 
         $(this).toggleClass("fa-chevron-down fa-chevron-up");
 
-
         if ($(this).hasClass('fa-chevron-up')) {
             $(this).siblings('.dropContent').hide(200);
         }
         else {
             $(this).siblings('.dropContent').show(200);
+        }
+
+    })
+
+    //show all / hide all
+    $('.skillControls>.skillToggle').click(function () {
+        $(this).toggleClass("fa-angle-double-down fa-angle-double-up");
+        $('.skillDropdown>i').toggleClass("fa-chevron-down fa-chevron-up");
+        $('.skillDropdown > i').removeClass("fa-chevron-down fa-chevron-up");
+
+        if ($(this).hasClass('fa-angle-double-up')) {
+            $('.skillDropdown>i').toggleClass("fa-chevron-up");
+            $('.dropContent').hide(200);
+        }
+        else {
+
+            $('.skillDropdown>i').toggleClass("fa-chevron-down");
+            $('.dropContent').show(200);
         }
 
     })
