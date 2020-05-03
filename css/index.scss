@@ -368,7 +368,7 @@ body {
     }
 }
 
-.wrapperDiv {
+#home {
     width: 100%;
     user-select: none;
     cursor: default;
@@ -379,6 +379,12 @@ body {
         @include headingFont();
         margin-left: 5%;
         margin-right: 5%;
+
+        .intro {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
         .title {
 
@@ -423,7 +429,7 @@ body {
             font-family: "futuraLight";
             letter-spacing: 3px;
             color: #ffffff;
-            max-width: 700px;
+            // max-width: 700px;
             line-height: 30px;
             margin-top: 10px;
             margin-bottom: 10px;
@@ -451,15 +457,54 @@ body {
         .bigLetter {
             user-select: none;
             z-index: -1;
-            position: absolute;
-            right: 20%;
-            top: -100%;
-            transform: rotate(-20deg);
+            position: relative;
+            top: 30%;
+            transform: rotate(-20deg) translateY(-50%);
 
             img {
                 height: 400px;
             }
         }
+    }
+
+}
+
+
+.wrapperDiv {
+    width: 100%;
+    user-select: none;
+    cursor: default;
+
+    .contentDiv {
+        // padding-top: 50px;
+        //@include vAlign();
+        @include headingFont();
+        margin-left: 5%;
+        margin-right: 5%;
+
+        .title {
+
+            .fancy {
+                display: inline;
+            }
+
+            span {
+                opacity: 0;
+                transition: all 50ms ease;
+            }
+        }
+
+        .textDiv {
+            font-size: 14px;
+            font-family: "futuraLight";
+            letter-spacing: 3px;
+            color: #ffffff;
+            // max-width: 700px;
+            line-height: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
     }
 
 }
@@ -755,8 +800,10 @@ form {
         text-align: center;
     }
 
-    .textDiv {
-        max-width: 100%;
+    .textDiv {}
+
+    .intro {
+        text-align: center !important;
     }
 
     #contact_btn {
@@ -780,9 +827,10 @@ form {
     .bigLetter {
 
 
-        img {
-            height: 300px !important;
 
+        img {
+            height: 250px !important;
+            margin-left: 15%;
         }
 
     }

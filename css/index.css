@@ -362,7 +362,7 @@ body {
           animation-fill-mode: forwards;
 }
 
-.wrapperDiv {
+#home {
   width: 100%;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -371,7 +371,7 @@ body {
   cursor: default;
 }
 
-.wrapperDiv .contentDiv {
+#home .contentDiv {
   line-height: 70px;
   font-family: "futura";
   font-weight: bold;
@@ -380,27 +380,34 @@ body {
   margin-right: 5%;
 }
 
-.wrapperDiv .contentDiv .title .fancy {
+#home .contentDiv .intro {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#home .contentDiv .title .fancy {
   display: inline;
 }
 
-.wrapperDiv .contentDiv .title span {
+#home .contentDiv .title span {
   opacity: 0;
   -webkit-transition: all 50ms ease;
   transition: all 50ms ease;
 }
 
-.wrapperDiv .contentDiv .title .fade {
+#home .contentDiv .title .fade {
   opacity: 1;
   -webkit-transform: translateY(0px);
           transform: translateY(0px);
 }
 
-.wrapperDiv .contentDiv .title .fade:hover {
+#home .contentDiv .title .fade:hover {
   color: #08fdd8;
 }
 
-.wrapperDiv .contentDiv .title .bounce {
+#home .contentDiv .title .bounce {
   -webkit-animation-name: 'bounceAnim';
           animation-name: 'bounceAnim';
   -webkit-animation-duration: 50ms;
@@ -431,18 +438,17 @@ body {
   }
 }
 
-.wrapperDiv .contentDiv .textDiv {
+#home .contentDiv .textDiv {
   font-size: 14px;
   font-family: "futuraLight";
   letter-spacing: 3px;
   color: #ffffff;
-  max-width: 700px;
   line-height: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.wrapperDiv .contentDiv #contact_btn {
+#home .contentDiv #contact_btn {
   opacity: 0;
   -webkit-animation-name: 'tagLine';
           animation-name: 'tagLine';
@@ -472,21 +478,58 @@ body {
   }
 }
 
-.wrapperDiv .contentDiv .bigLetter {
+#home .contentDiv .bigLetter {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   z-index: -1;
-  position: absolute;
-  right: 20%;
-  top: -100%;
-  -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
+  position: relative;
+  top: 30%;
+  -webkit-transform: rotate(-20deg) translateY(-50%);
+          transform: rotate(-20deg) translateY(-50%);
 }
 
-.wrapperDiv .contentDiv .bigLetter img {
+#home .contentDiv .bigLetter img {
   height: 400px;
+}
+
+.wrapperDiv {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+.wrapperDiv .contentDiv {
+  line-height: 70px;
+  font-family: "futura";
+  font-weight: bold;
+  font-size: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.wrapperDiv .contentDiv .title .fancy {
+  display: inline;
+}
+
+.wrapperDiv .contentDiv .title span {
+  opacity: 0;
+  -webkit-transition: all 50ms ease;
+  transition: all 50ms ease;
+}
+
+.wrapperDiv .contentDiv .textDiv {
+  font-size: 14px;
+  font-family: "futuraLight";
+  letter-spacing: 3px;
+  color: #ffffff;
+  line-height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 @-webkit-keyframes blink {
@@ -800,8 +843,8 @@ form textarea {
   .wrapperDiv {
     text-align: center;
   }
-  .textDiv {
-    max-width: 100%;
+  .intro {
+    text-align: center !important;
   }
   #contact_btn {
     margin: 0 auto;
@@ -816,7 +859,8 @@ form textarea {
 
 @media (max-width: 500px) {
   .bigLetter img {
-    height: 300px !important;
+    height: 250px !important;
+    margin-left: 15%;
   }
 }
 /*# sourceMappingURL=index.css.map */
