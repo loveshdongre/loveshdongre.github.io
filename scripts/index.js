@@ -63,6 +63,7 @@ $(document).ready(function () {
     $('#contact_btn').click(() => {
         $('html,body').animate({ scrollTop: $('#contact').offset().top - 100 }, 'swing')
     })
+
     // on clicking downloadcv btn
     $('#downloadCV').click(() => {
         // window.open('/media/Lovesh Resume -19April2020.pdf');
@@ -76,7 +77,6 @@ $(document).ready(function () {
     })
 
     //text animation
-
     const text = document.querySelector('.fancy');
     const strText = text.textContent;
     const splitText = strText.split('');
@@ -135,7 +135,7 @@ $(document).ready(function () {
     })
 
 
-    //skillbar
+    //skillbar on scroll
     function skillBar() {
         obj = $('#resume').find('.skillBar');
 
@@ -192,5 +192,24 @@ $(document).ready(function () {
         }
 
     })
+
+    //project filter
+    $(".filter-button").click(function () {
+        var value = $(this).attr('data-filter');
+        $('.filter-button').removeClass('active_tab');
+        $(this).addClass('active_tab');
+        if (value == "all") {
+            $('.filter').show(200);
+        }
+        else {
+            $(".filter").not('.' + value).hide(200);
+            $('.filter').filter('.' + value).show(200);
+        }
+    });
+
+    if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+    }
+    $(this).addClass("active");
 
 });
