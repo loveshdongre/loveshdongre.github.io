@@ -857,6 +857,14 @@ form {
     }
 }
 
+#footer {
+    font-size: 1rem;
+    font-family: 'futuraz';
+    float: right;
+    padding: 5px;
+    color: rgb(187, 187, 187);
+}
+
 @media(max-width:990px) {
     .wrapperDiv {
         text-align: center;
