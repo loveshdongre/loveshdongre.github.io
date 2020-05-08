@@ -28,18 +28,18 @@ function validateForm() {
 $(document).ready(function () {
 
     //navhide on scroll
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function () {
-        var currentScrollpos = window.pageYOffset;
-        if (prevScrollpos > currentScrollpos) {
-            $('.mobileMenu').css('top', '0');
-        }
-        else {
-            $('.mobileMenu').css('animation', 'unset')
-            $('.mobileMenu').css('top', '-100%');
-        }
-        prevScrollpos = currentScrollpos;
-    }
+    // var prevScrollpos = window.pageYOffset;
+    // window.onscroll = function () {
+    //     var currentScrollpos = window.pageYOffset;
+    //     if (prevScrollpos > currentScrollpos) {
+    //         $('.mobileMenu').css('top', '0');
+    //     }
+    //     else if (prevScrollpos < currentScrollpos) {
+    //         $('.mobileMenu').css('animation', 'unset')
+    //         $('.mobileMenu').css('top', '-100%');
+    //     }
+    //     prevScrollpos = currentScrollpos;
+    // }
 
     //tooltip
     $('[data-toggle="tooltip"]').tooltip()
