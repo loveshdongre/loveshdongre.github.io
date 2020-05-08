@@ -903,9 +903,10 @@ form textarea {
 }
 
 #footer {
+  width: 100%;
   font-size: 1rem;
-  font-family: 'futuraz';
-  float: right;
+  font-family: 'futura';
+  text-align: right;
   padding: 5px;
   color: #bbbbbb;
 }
@@ -927,6 +928,9 @@ form textarea {
     height: 350px !important;
   }
   #about .contentDiv {
+    text-align: center;
+  }
+  #footer {
     text-align: center;
   }
 }

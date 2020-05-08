@@ -121,11 +121,6 @@ $(document).ready(function () {
         };
     });
 
-    //reload svg
-    function loadingFunction() {
-        var url = "media/L.svg?r=" + Math.random();
-        $(".bigLetter>img").attr("src", url);
-    }
 
     loadingFunction();
 

@@ -858,9 +858,10 @@ form {
 }
 
 #footer {
+    width: 100%;
     font-size: 1rem;
-    font-family: 'futuraz';
-    float: right;
+    font-family: 'futura';
+    text-align: right;
     padding: 5px;
     color: rgb(187, 187, 187);
 }
@@ -897,6 +898,12 @@ form {
             text-align: center;
         }
     }
+
+    #footer {
+        text-align: center;
+    }
+
+
 }
 
 @media(max-width:500px) {
