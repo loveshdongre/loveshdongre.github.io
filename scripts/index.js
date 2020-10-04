@@ -67,7 +67,7 @@ $(document).ready(function () {
     // on clicking downloadcv btn
     $('#downloadCV').click(() => {
         // window.open('/media/Lovesh Resume -19April2020.pdf');
-        const file_path = '/media/Lovesh-Resume-19Aug20.pdf';
+        const file_path = '/media/LoveshResume04Oct20';
         const a = document.createElement('A');
         a.href = file_path;
         a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
