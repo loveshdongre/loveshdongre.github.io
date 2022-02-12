@@ -67,7 +67,7 @@ $(document).ready(function () {
     // on clicking downloadcv btn
     $('#downloadCV').click(() => {
         // window.open('/media/Lovesh Resume -19April2020.pdf');
-        const file_path = '/media/Lovesh Dongre resume.pdf';
+        const file_path = '/media/Lovesh Dongre site.pdf';
         const a = document.createElement('A');
         a.href = file_path;
         a.download = file_path.substr(file_path.lastIndexOf('/') + 1);
